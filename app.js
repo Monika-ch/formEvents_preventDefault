@@ -24,3 +24,11 @@ const addTweet = (username, tweet) => {
   newTweet.append(` - ${tweet}`);
   tweetsContainer.append(newTweet);
 }
+
+
+// EVENT DELEGATION
+tweetsContainer.addEventListener('click', function (e) {
+  e.target.nodeName === 'LI' && e.target.remove();
+})
+
+// EVENT BUBBLING ... to prevent it use e.stopPropagation()
